@@ -1,0 +1,27 @@
+
+.searchForm {
+    max-width: 480px;
+}
+
+.searchFieldset {
+    border: none;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+}
+
+.searchButton {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 100%;
+    font-size: 16px;
+    line-height: 30px;
+    font-weight: bold;
+    background-color: #00693e;
+    border-color: #005933;
+    color: white;
+}
+
+.searchError {
+    font-weight: bold;
+    color: darkred;
+}

@@ -1,0 +1,13 @@
+{% load render_bundle from webpack_loader %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <title>Books Like This</title>
+</head>
+<body style="background-color: #F7FCF9">
+  <div id="app-container"></div>
+  {% render_bundle 'main' %}
+</body>
+</html>

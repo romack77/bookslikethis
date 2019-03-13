@@ -1,0 +1,11 @@
+
+.aboutContainer {
+    margin-top: 48px;
+    font-size: 14px;
+    color: #777777;
+    text-align: center;
+}
+
+.aboutContainer a:link,visited,hover,active {
+    color: #777777;
+}

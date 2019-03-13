@@ -1,0 +1,20 @@
+.idea
+.ipynb_checkpoints
+.vagrant
+Vagrantfile
+bootstrap.sh
+__pycache__
+*~
+*.swp
+
+.venv
+node_modules
+bookslikethis.egg-info
+
+# Frontend compiled files
+bookslikethis/assets/bundles
+webpack-stats.json
+staticfiles
+
+# Datasets
+*.jsonl
