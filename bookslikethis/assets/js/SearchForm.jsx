@@ -54,7 +54,6 @@ class SearchForm extends React.Component {
                 query: query,
                 selections: works.map(
                     name=> ({label: name, value: name})),
-                searching: true
             }, this.search)
         }
     }
@@ -115,6 +114,9 @@ class SearchForm extends React.Component {
 
     /* Performs a search. */
     search() {
+        if (this.state.searching) {
+            return;
+        }
         this.setState({searching: true, error: false});
         var searchParams = {
             works: this.state.selections.map(s => s.value),
