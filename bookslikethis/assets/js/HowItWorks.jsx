@@ -10,13 +10,18 @@ class HowItWorks extends React.Component {
                 <p>
                 Finds books based on similar story features. For instance,
                 The Giver might match with books that share the
-                tropes <a href="https://tvtropes.org/pmwiki/pmwiki.php/Main/FalseUtopia">False Utopia</a>
+                tropes <a href="https://tvtropes.org/pmwiki/pmwiki.php/Main/FalseUtopia">
+                    False Utopia</a>
                 <span>, </span>
-                <a href="https://tvtropes.org/pmwiki/pmwiki.php/Main/CityInABottle">City in a Bottle</a>
+                <a href="https://tvtropes.org/pmwiki/pmwiki.php/Main/CityInABottle">
+                    City in a Bottle
+                </a>
                 <span>, and </span>
-                <a href="https://tvtropes.org/pmwiki/pmwiki.php/Main/CheerfulChild">Cheerful Child</a>
-                , leading to recommendations like Brave New World and Divergent, along with an explanation
-                of what they have in common.
+                <a href="https://tvtropes.org/pmwiki/pmwiki.php/Main/CheerfulChild">
+                    Cheerful Child
+                </a>
+                , leading to recommendations like Brave New World and Divergent, along with an
+                explanation of what they have in common.
                 </p>
                 <p>
                 This contrasts with most recommendation and e-commerce sites, which instead answer

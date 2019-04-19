@@ -7,17 +7,16 @@ class About extends React.Component {
         super(props);
         this.state = {
             showEmail: false
-        }
+        };
     }
 
     onClickContact(e) {
-        console.log('on click contact');
         e.preventDefault();
         this.setState({showEmail: true});
     }
 
     render() {
-        var emailSuffix = '@gmail.com';
+        const emailSuffix = '@gmail.com';
         return (
             <div className={styles.aboutContainer}>
                 <div>

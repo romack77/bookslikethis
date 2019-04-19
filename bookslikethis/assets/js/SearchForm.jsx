@@ -35,12 +35,12 @@ class SearchForm extends React.Component {
     }
 
     trySearchFromQs() {
-        var params = this.getQueryParams(this.props.location.search);
-        var query = ''
+        const params = this.getQueryParams(this.props.location.search);
+        let query = ''
         if (params['query']) {
             query = params['query'];
         }
-        var works = [];
+        let works = [];
         if (params['works']) {
             if (typeof params['works'] === 'string') {
                 works = [params['works']];
@@ -48,30 +48,29 @@ class SearchForm extends React.Component {
                 works = params['works'];
             }
         }
-        var searching = query !== '' || works.length > 0;
+        let searching = query !== '' || works.length > 0;
         if (searching) {
             this.setState({
                 query: query,
                 selections: works.map(
                     name=> ({label: name, value: name})),
-            }, this.search)
+            }, this.search);
         }
     }
 
     getQueryParams(qs) {
         qs = qs.split('+').join(' ');
-        var params = {},
-            tokens,
-            re = /[?&]?([^=]+)=([^&]*)/g;
+        const params = {};
+        let tokens;
+        const re = /[?&]?([^=]+)=([^&]*)/g;
         while (tokens = re.exec(qs)) {
-            var name = decodeURIComponent(tokens[1])
-            var value = decodeURIComponent(tokens[2])
-            if (typeof params[name] == 'undefined') {
+            const name = decodeURIComponent(tokens[1]);
+            const value = decodeURIComponent(tokens[2]);
+            if (typeof params[name] === 'undefined') {
                 params[name] = value;
-            } else if (typeof params[name] == 'string') {
+            } else if (typeof params[name] === 'string') {
                 // Turn params that repeat into an array of values.
-                params[name]
-                var values = [params[name], decodeURIComponent(value)];
+                const values = [params[name], decodeURIComponent(value)];
                 params[name] = values;
             } else {
                 // Another array entry.
@@ -118,14 +117,14 @@ class SearchForm extends React.Component {
             return;
         }
         this.setState({searching: true, error: false});
-        var searchParams = {
+        const searchParams = {
             works: this.state.selections.map(s => s.value),
             query: this.state.query
         };
         axios.get('/api/search/', {
             params: searchParams,
             paramsSerializer: function(params) {
-               return qs.stringify(params, {arrayFormat: 'repeat'})
+               return qs.stringify(params, {arrayFormat: 'repeat'});
             }
         })
         .then(function (response) {
@@ -141,7 +140,7 @@ class SearchForm extends React.Component {
     /* Search form submitted handler. */
     handleSubmit(e) {
         e.preventDefault();
-        var searchParams = {
+        const searchParams = {
             works: this.state.selections.map(s => s.value),
             query: this.state.query
         };
@@ -199,7 +198,7 @@ class SearchForm extends React.Component {
                     }
                     {(this.state.searchResults !== null &&
                      this.state.searching !== true &&
-                     this.state.searchResults.length == 0) && <span>No results found.</span>}
+                     this.state.searchResults.length === 0) && <span>No results found.</span>}
                 </div>
             </div>
         );
@@ -209,13 +208,13 @@ class SearchForm extends React.Component {
 SearchForm.defaultProps = {
     autocompleteRateLimitMs: 250,
     maxQueryWorks: 200
-}
+};
 
 SearchForm.propTypes = {
     history: ReactRouterPropTypes.history.isRequired,
     location: ReactRouterPropTypes.location.isRequired,
     autocompleteRateLimitMs: PropTypes.number,
     maxQueryWorks: PropTypes.number
-}
+};
 
 export default SearchForm;

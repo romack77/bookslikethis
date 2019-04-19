@@ -9,14 +9,14 @@ class SearchResult extends React.Component {
     }
 
     render() {
-        var more_tropes_count = (this.props.total_shared_tropes -
+        const moreTropesCount = (this.props.total_shared_tropes -
             this.props.tropes.length);
         return (
             <div className={styles.resultContainer}>
                 <div className={styles.resultTitleContainer}>
                     <a href={this.props.url}
-                       className={styles.resultName}>
-                       {this.props.name}
+                        className={styles.resultName}>
+                        {this.props.name}
                     </a>
                     {this.props.creator !== null &&
                         <span className={styles.resultCreator}> by <a href={this.props.creator.url}>
@@ -26,7 +26,7 @@ class SearchResult extends React.Component {
                 <div className={styles.resultBodyContainer}>
                     {this.props.tropes.map(
                         (t, i) => <span key={t.url}>
-                                {i != 0 && <span> &middot; </span>}
+                                {i !== 0 && <span> &middot; </span>}
                                 <a
                                        href={t.url}
                                        className={styles.resultTrope}
@@ -42,15 +42,17 @@ class SearchResult extends React.Component {
                                     </ReactTooltip>
                                 }
                             </span>)}
-                    {more_tropes_count > 0 &&
-                        <span className={styles.resultTropeCount}>+{this.props.total_shared_tropes} more</span>}
+                    {moreTropesCount > 0 &&
+                        <span className={styles.resultTropeCount}>
+                            +{this.props.total_shared_tropes} more
+                        </span>}
                 </div>
             </div>
         );
     }
 
-    buildTooltipId(trope_idx) {
-        return this.props.index + '_' + trope_idx;
+    buildTooltipId(tropeIdx) {
+        return this.props.index + '_' + tropeIdx;
     }
 }
 
@@ -65,9 +67,9 @@ SearchResult.propTypes = {
     tropes: PropTypes.arrayOf(PropTypes.shape({
         name: PropTypes.string.required,
         url: PropTypes.string.required,
-        laconic_description: PropTypes.string
+        laconic_description: PropTypes.string,
     })),
-    total_shared_tropes: PropTypes.number.isRequired
-}
+    total_shared_tropes: PropTypes.number.isRequired,
+};
 
 export default SearchResult;

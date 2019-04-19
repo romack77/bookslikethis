@@ -7,13 +7,13 @@ import styles from '../css/MainPage.css';
 class MainPage extends React.Component {
     render() {
         const appContainerStyles = (
-            styles.appContainer + " " + styles.appContainerDesktop);
+            styles.appContainer + ' ' + styles.appContainerDesktop);
         return (
-           <div className={appContainerStyles}>
-               <h1 className={styles.appTitle}>Books Like This</h1>
-               <SearchForm {...this.props} />
-               <About/>
-           </div>
+            <div className={appContainerStyles}>
+                <h1 className={styles.appTitle}>Books Like This</h1>
+                <SearchForm {...this.props} />
+                <About/>
+            </div>
         );
     }
 }
@@ -21,6 +21,6 @@ class MainPage extends React.Component {
 MainPage.propTypes = {
     history: ReactRouterPropTypes.history.isRequired,
     location: ReactRouterPropTypes.location.isRequired,
-}
+};
 
 export default MainPage;
