@@ -96,22 +96,19 @@ WEBPACK_LOADER = {
 WSGI_APPLICATION = 'bookslikethis.wsgi.application'
 
 
+from django.db.backends import postgresql
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 DATABASES = {
     # This is the local dev config. Django-heroku overwrites this on prod.
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'bookslikethis',
         'USER': 'django',
         'PASSWORD': '_954H6mG9t*c*scY',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
-    #'default': {
-    #    'ENGINE': 'django.db.backends.sqlite3',
-    #    'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    #}
 }
 
 CACHE_ENABLED = True
