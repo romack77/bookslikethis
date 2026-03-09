@@ -4,9 +4,6 @@ Story features are tropes pulled from
 [tvtropes.org](https://tvtropes.org), a community-driven wiki
 devoted to the analysis of fictional media.
 
-See it in action:
-[bookslikethis.herokuapp.com](https://bookslikethis.herokuapp.com)
-
 ## How it works
 This can be thought of as a specialized search engine, where books
 are both the search terms and the results, and results are ranked
